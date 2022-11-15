@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const  messageModel = require('./module/message');
 const path = require("path");
+require("dotenv").config()
 
 const PORT = 5000;
 
@@ -9,9 +10,9 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://vaibhavi:vaibhavi@learnmongodb.eluyb.mongodb.net/?retryWrites=true&w=majority', ()=>{
-    console.log('connected to mongodb');
-});
+mongoose.connect(process.env.MONGO_URI, () => {
+  console.log("connected to mongodb..");
+})
 
 app.get('/health', (req, res) => {
     res.json({
