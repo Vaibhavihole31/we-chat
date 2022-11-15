@@ -47,7 +47,7 @@ function App()
  <div> 
   <BrowserRouter>
   <Routes>
-    <Route path="/Localstorage" element={<Localstorage/>} />
+    <Route path="/" element={<Localstorage/>} />
     <Route path="/auth" element={<Auth/>} />
   </Routes>
   </BrowserRouter>
